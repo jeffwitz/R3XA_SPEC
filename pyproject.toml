@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "r3xa-spec"
+version = "2024.7.1"
+description = "R3XA schema and specification repository"
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "GPL-2.0-or-later" }
+authors = [
+  { name = "R3XA contributors" },
+]
+
+[project.optional-dependencies]
+docs = [
+  "sphinx>=7.4",
+  "myst-parser>=2.0",
+  "sphinx-rtd-theme>=2.0",
+]
+dev = [
+  "pytest>=8.0",
+  "sphinx>=7.4",
+  "myst-parser>=2.0",
+  "sphinx-rtd-theme>=2.0",
+]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["r3xa_spec*"]
