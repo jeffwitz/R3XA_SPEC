@@ -1,3 +1,9 @@
+from __future__ import annotations
+
+import subprocess
+import sys
+from pathlib import Path
+
 project = "R3XA_SPEC"
 author = "R3XA contributors"
 release = "2024.7.1"
@@ -23,3 +29,26 @@ latex_elements = {
 \renewcommand{\sfdefault}{\rmdefault}
 """,
 }
+
+
+def _regenerate_spec_artifacts() -> None:
+    root = Path(__file__).resolve().parents[1]
+    commands = [
+        [
+            sys.executable,
+            str(root / "tools" / "strip_schema.py"),
+            str(root / "schema-full.json"),
+            str(root / "schema.json"),
+        ],
+        [
+            sys.executable,
+            str(root / "tools" / "generate_spec.py"),
+            str(root / "schema-full.json"),
+            str(root / "docs" / "specification.md"),
+        ],
+    ]
+    for command in commands:
+        subprocess.run(command, check=True, cwd=root)
+
+
+_regenerate_spec_artifacts()

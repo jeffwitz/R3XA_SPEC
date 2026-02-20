@@ -56,6 +56,25 @@ make pdf
 
 Read the Docs is configured through `.readthedocs.yaml` and builds from Sphinx (`docs/conf.py`).
 PDF export is enabled with RTD `formats: [pdf]`.
+The Sphinx config regenerates `schema.json` and `docs/specification.md` automatically at build time.
+
+### Enable online Read the Docs
+
+1. Go to <https://app.readthedocs.org/>.
+2. Click **Add project**.
+3. Import `jeffwitz/R3XA_SPEC` from GitHub.
+4. Confirm the default branch (`main`).
+5. Keep config file mode enabled (`.readthedocs.yaml`).
+6. Launch the first build.
+7. Check:
+   - HTML: `/en/latest/`
+   - PDF: **Download PDF** button on the project page.
+
+For a local RTD-like check:
+
+```bash
+python -m sphinx -T -b html -d docs/_build/doctrees -D language=en docs docs/_build/rtd-html
+```
 
 ## Contributing
 
