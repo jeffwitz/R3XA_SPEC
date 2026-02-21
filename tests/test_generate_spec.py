@@ -48,10 +48,11 @@ def test_sections_present(tmp_path):
     output_path = tmp_path / "specification.md"
     _run_generate(output_path)
     text = output_path.read_text(encoding="utf-8")
+    assert "## General structure" in text
     assert "## Settings" in text
     assert "## Data Sources" in text
     assert "## Data Sets" in text
-    assert "## Annexe — Types communs" in text
+    assert "## Appendix — Common Types" in text
 
 
 def test_required_fields_marked(tmp_path):
@@ -82,9 +83,9 @@ def test_no_section_types_in_body(tmp_path):
     output_path = tmp_path / "specification.md"
     _run_generate(output_path)
     text = output_path.read_text(encoding="utf-8")
-    annexe_index = text.index("## Annexe — Types communs")
+    appendix_index = text.index("## Appendix — Common Types")
     unit_index = text.index("### Unit")
-    assert unit_index > annexe_index
+    assert unit_index > appendix_index
 
 
 def test_roundtrip_consistency(tmp_path):

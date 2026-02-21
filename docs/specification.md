@@ -9,7 +9,7 @@
 
 Yet another metadata file format whose goal is to provide a data representation scheme compatible with the variety of data types encountered in experimental and computational photomechanics, and to provide a convenient framework for software coupling and data fusion.
 
-## Structure générale
+## General structure
 
 | Section | Description |
 |---|---|
@@ -427,7 +427,7 @@ When all the data is stored in separated files (like a list of images). They sho
 | `timestamps` | array[number] | Yes | List of the timestamps. |
 | `data` | array[string] | Yes | List of the data files. |
 
-## Annexe — Types communs
+## Appendix — Common Types
 
 ### Setting id
 

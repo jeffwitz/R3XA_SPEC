@@ -169,7 +169,7 @@ def _generate_markdown(schema: dict[str, Any], schema_path: Path) -> str:
         "",
         _escape_md(schema.get("description", "")),
         "",
-        "## Structure générale",
+        "## General structure",
         "",
         "| Section | Description |",
         "|---|---|",
@@ -224,7 +224,7 @@ def _generate_markdown(schema: dict[str, Any], schema_path: Path) -> str:
             lines.extend(_fields_table_lines(item_schema))
             lines.append("")
 
-    lines.extend(["## Annexe — Types communs", ""])
+    lines.extend(["## Appendix — Common Types", ""])
 
     for type_name, type_schema in defs.get("types", {}).items():
         display_name = TYPE_NAME_OVERRIDES.get(type_name, type_name.replace("_", " ").title())
