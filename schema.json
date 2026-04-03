@@ -453,6 +453,11 @@
             "title": "Documentation",
             "description": "Documentation filename, path or URL",
             "type": "string"
+          },
+          "uncertainty": {
+            "title": "Uncertainty",
+            "description": "Quantification of data uncertainty.",
+            "$ref": "#/$defs/types/unit"
           }
         },
         "required": [
