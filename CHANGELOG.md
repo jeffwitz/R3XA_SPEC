@@ -2,6 +2,11 @@
 
 All notable schema/spec changes should be documented in this file.
 
+## [2024.7.2] - 2026-04-03
+
+- Schema: normalize `settings/generic.documentation` to lowercase `documentation`.
+- Generated artifacts: refresh `schema.json` and `docs/specification.md` from the updated source schema.
+
 ## [2024.7.1] - 2026-02-20
 
 - Initial split bootstrap for `R3XA_SPEC`.
